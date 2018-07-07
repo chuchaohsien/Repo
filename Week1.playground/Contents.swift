@@ -203,5 +203,7 @@ multiply(a: 5)
  // Others
 
 /**
-123546859294
+ first step  : 下載Github桌面應用程式，並在網頁版Github註冊帳號
+ second step : 打開桌面應用程式，先在本地端建立一個Repository檔案夾，並把要上傳到Ｒemote端的資料放進來。
+ third step : 在桌面應用程式上選取要上傳的資料，並按下commit to master，命名後按下 Publish Repository 即可上傳資料。
 **/
