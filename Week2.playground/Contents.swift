@@ -61,16 +61,19 @@ gg = Horse(gender: .male)
 gg.eat()
 
 
-  // 3. ?????
-/**
+  // 3. 
+
 class Zoo {
     var weeklyHot: Animal
-    init(weeklyHot: Animal){}
+    init(weeklyHot: Animal){
+        self.weeklyHot = weeklyHot
+    }
 }
+
 let zoo = Zoo(weeklyHot: Tiger(gender: .male))
 
 zoo.weeklyHot
-**/
+
 
   // 4.
 /**
@@ -153,7 +156,7 @@ class People{
       //guard firstname = Pet?.firstName,
       //let lastname = Pet?.lastName
         // else {
-           // return nil 
+           // return nil 1995
       //}
     //}
     
