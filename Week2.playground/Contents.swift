@@ -61,7 +61,7 @@ gg = Horse(gender: .male)
 gg.eat()
 
 
-  // 3. 
+  // 3.
 
 class Zoo {
     var weeklyHot: Animal
@@ -171,32 +171,28 @@ class People{
 
   // Protocol in Swift
 
-  // 1. 2. 3. 4. 5.
-struct Person {
-    let firstName : String
-    let lastName : String
-    let toolman : Toolman
-}
-
-struct Engineer {
-    let engineer : String
-}
+  // 1. 2. 3. 4. 5. 6.
 
 protocol PoliceMan{
-    var firstName: String { get }
-    var lastName: String { get }
-    
     func arrestCriminals()
 }
 
 protocol Toolman{
-    var engineer : String { get }
-    
     func fixComputer()
 }
 
-// 6. ?????
+struct Person: PoliceMan {
+    let Name : String
+    let toolman : Toolman
+    func arrestCriminals(){}
+}
 
+struct Engineer: Toolman{
+    let engineer : String
+    func fixComputer() {}
+}
+let engineer = Engineer(engineer: "engineer Steven")
+let person = Person(Name:"Steven",toolman: engineer)
 
   // Error Handing in Swift
 
