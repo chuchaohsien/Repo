@@ -17,8 +17,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var mySegmented: UISegmentedControl!
     @IBOutlet weak var check: UITextField!
     
-    let myAccount = "luke@gmail.com"
-    let myPassword = "1234"
+    let myAccount = "luke@gmail.com"      // 唯一有效帳號
+    let myPassword = "1234"               // 唯一有效密碼
+    let mmAcount = ""                     // 空白字串
+    let mmPassword = ""                   // 空白字串
     
     let alertController1 = UIAlertController(title: "Error", message: "Login fail.", preferredStyle: .alert)
     let action1 = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
@@ -52,7 +54,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib
@@ -83,19 +84,22 @@ class ViewController: UIViewController {
 
       if mySegmented.selectedSegmentIndex == 1 {
         
-        if account.text == nil {
+        if account.text == mmAcount {
             alertController2.addAction(action2)
             self.present(alertController2, animated: true, completion: nil )
         }
-        if password.text == nil {
+        if password.text == mmPassword {
             alertController3.addAction(action3)
             self.present(alertController3, animated: true, completion: nil )
         }
         if password.text != check.text {
             alertController4.addAction(action4)
             self.present(alertController4, animated: true, completion: nil )
+        } else {
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginView")
+            
+            self.present(viewController, animated: false, completion: nil)
         }
-        
         }
       }
 }
