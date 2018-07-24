@@ -12,6 +12,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mycheck: UILabel!
     @IBOutlet weak var thirdtext: UITextField!
+    @IBOutlet weak var account: UITextField!    // 輸入帳號
+    @IBOutlet weak var password: UITextField!   // 輸入密碼
+    
+    let myAccount = "luke@gmail.com"
+    let myPassword = "1234"
     
     @IBAction func mySegmentedAction(_ sender: UISegmentedControl) {
         
@@ -36,6 +41,25 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func login(_ sender: UIButton) {
+        
+        if account.text == myAccount && password.text == myPassword {
+            print("成功")
+            // self.init.text = "成功"
+            
+            //傳至下一頁面
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginView")
+            
+            self.present(viewController, animated: false, completion: nil)
+            // 返回 self.dismissViewControllerAnimated(true, completion: nil)
+            
+        } else{
+            print("輸入錯誤")
+           // self.init.text = "輸入錯囉"
+        }
+        
     }
     
 
